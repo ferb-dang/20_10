@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14 Lá Thư Yêu Thương</title>
+<style>
+  :root { --ink:#492d3b; --paper:#fffaf5; --rose:#e96d91; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; color:var(--ink);
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at 10% 10%, #ffe6ee 0, transparent 28%),
+      radial-gradient(circle at 90% 80%, #fff0c9 0, transparent 28%),
+      linear-gradient(135deg,#fff8f5,#fff1f5 50%,#fff9e9);
+  }
+  button { font:inherit; }
+  .page { min-height:100vh; padding:42px 22px 55px; }
+  .hero { max-width:980px; margin:0 auto 34px; text-align:center; }
+  .eyebrow { color:#c35a7b; text-transform:uppercase; letter-spacing:.22em; font-size:.75rem; font-weight:800; }
+  h1 { margin:12px 0 12px; font-family: Georgia,serif; font-size:clamp(2.1rem,5vw,4rem); line-height:1.08; font-weight:700; color:#733c58; }
+  .subtitle { max-width:620px; margin:0 auto; color:#805e6c; line-height:1.7; }
+  .sparkle { display:inline-block; margin:0 7px; color:#d59b43; }
+  .envelope-grid { width:min(1100px,100%); margin:auto; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+  .envelope-card { border:0; background:transparent; padding:0; cursor:pointer; text-align:center; color:var(--ink); transition:transform .25s ease; }
+  .envelope-card:hover, .envelope-card:focus-visible { transform:translateY(-7px) rotate(-1deg); outline:none; }
+  .envelope { position:relative; height:154px; border-radius:9px 9px 13px 13px; overflow:hidden; box-shadow:0 12px 24px #7e45501b,0 3px 6px #7e455018; isolation:isolate; }
+  .envelope::before { content:""; position:absolute; z-index:2; inset:0; background:linear-gradient(145deg,#ffffff30,transparent 42%); pointer-events:none; }
+  .envelope::after { content:""; position:absolute; z-index:1; left:0; right:0; bottom:-1px; height:72%; clip-path:polygon(0 0,50% 62%,100% 0,100% 100%,0 100%); background:var(--flap); filter:brightness(.97); }
+  .flap { position:absolute; z-index:3; left:0; right:0; top:0; height:64%; clip-path:polygon(0 0,100% 0,50% 100%); background:var(--flap); filter:brightness(1.06); }
+  .seal { position:absolute; z-index:4; left:50%; top:54%; transform:translate(-50%,-50%); width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:var(--seal); color:white; box-shadow:0 2px 5px #0002; font-size:17px; }
+  .letter-mark { position:absolute; z-index:4; top:13px; left:14px; font-size:12px; letter-spacing:.08em; color:var(--mark); opacity:.9; font-weight:800; }
+  .envelope-card:nth-child(3n) .envelope { border:1px solid #ffffffb0; }
+  .env-name { display:block; margin-top:12px; font-family:Georgia,serif; font-weight:700; font-size:1.04rem; }
+  .env-caption { display:block; margin-top:4px; font-size:.78rem; color:#9a7886; }
+  .footer-note { text-align:center; margin:34px auto 0; color:#a17b89; font-size:.82rem; }
+  .hidden { display:none !important; }
+
+  /* Letter view */
+  .letter-view { min-height:calc(100vh - 84px); width:min(900px,100%); margin:auto; display:flex; flex-direction:column; }
+  .letter-top { text-align:center; margin-bottom:18px; }
+  .letter-top .eyebrow { margin-bottom:10px; }
+  .letter-top h2 { font:700 clamp(2rem,4vw,3.1rem)/1.15 Georgia,serif; margin:0; color:#733c58; }
+  .letter-paper { position:relative; flex:1; width:100%; padding:clamp(22px,5vw,48px); border-radius:20px; background:rgba(255,255,255,.84); border:1px solid #fff; box-shadow:0 20px 60px #82455a17; overflow:hidden; }
+  .letter-paper::before { content:""; position:absolute; inset:12px; border:1px dashed var(--accent); opacity:.3; border-radius:13px; pointer-events:none; }
+  .letter-content { position:relative; z-index:1; max-width:720px; margin:auto; }
+  .greeting { font:italic 1.3rem Georgia,serif; color:var(--accent); margin:0 0 18px; }
+  .wish { white-space:pre-line; line-height:1.85; font-size:1.04rem; color:#634958; }
+  .signoff { margin-top:22px; font:italic 1.2rem Georgia,serif; text-align:right; color:var(--accent); }
+  .media-frame { margin:25px auto 8px; width:min(100%,620px); min-height:180px; border-radius:15px; overflow:hidden; background:linear-gradient(135deg,var(--media1),var(--media2)); display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; position:relative; }
+  .media-frame img, .media-frame video { display:block; width:100%; max-height:420px; object-fit:contain; background:#241b22; }
+  .media-placeholder { padding:30px; }
+  .media-placeholder .big-icon { font-size:3rem; display:block; margin-bottom:10px; }
+  .media-placeholder p { margin:0; line-height:1.6; }
+  .media-placeholder small { display:block; margin-top:8px; opacity:.85; }
+  .letter-actions { display:flex; justify-content:flex-end; padding-top:18px; }
+  .back-btn { border:0; border-radius:999px; padding:12px 20px; background:#733c58; color:white; cursor:pointer; box-shadow:0 7px 18px #733c5826; transition:transform .2s,background .2s; }
+  .back-btn:hover { background:#8d4d6c; transform:translateY(-2px); }
+  .back-btn span { margin-right:7px; }
+  .tiny-hearts { color:#d97898; letter-spacing:.3em; margin-top:20px; text-align:center; }
+
+  @media(max-width:850px) { .envelope-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:19px; } }
+  @media(max-width:580px) {
+    .page { padding:30px 16px 35px; }
+    .envelope-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 14px; }
+    .envelope { height:130px; }
+    .env-name { font-size:.95rem; }
+    .letter-paper { padding:27px 21px; }
+    .wish { font-size:.98rem; }
+  }
+  @media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none !important; scroll-behavior:auto !important; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <section id="home">
+    <header class="hero">
+      <div class="eyebrow"><span class="sparkle">✦</span> Gửi những điều dịu dàng nhất <span class="sparkle">✦</span></div>
+      <h1>14 Lá Thư Yêu Thương</h1>
+      <p class="subtitle">Mỗi phong thư là một lời chúc nhỏ, một chút yêu thương và một điều xinh đẹp dành riêng cho bạn. Hãy chọn một lá thư để mở nhé!</p>
+    </header>
+    <div class="envelope-grid" id="envelopeGrid" aria-label="Danh sách 14 lá thư"></div>
+    <p class="footer-note">Chúc bạn luôn rạng rỡ, hạnh phúc và được yêu thương mỗi ngày ♡</p>
+  </section>
+
+  <section id="letterView" class="letter-view hidden" aria-live="polite">
+    <header class="letter-top">
+      <div class="eyebrow">Một điều muốn gửi đến bạn</div>
+      <h2 id="letterTitle"></h2>
+    </header>
+    <article class="letter-paper" id="letterPaper">
+      <div class="letter-content">
+        <p class="greeting" id="letterGreeting"></p>
+        <div class="wish" id="letterWish"></div>
+        <div class="media-frame" id="mediaFrame"></div>
+        <p class="signoff" id="letterSignoff"></p>
+      </div>
+    </article>
+    <div class="letter-actions">
+      <button class="back-btn" id="backButton" type="button"><span aria-hidden="true">←</span> Quay trở lại</button>
+    </div>
+    <div class="tiny-hearts" aria-hidden="true">♡  ✦  ♡  ✦  ♡</div>
+  </section>
+</main>
+
+<script>
+/*
+  TÙY CHỈNH NỘI DUNG:
+  - Mỗi lá thư có thể dùng ảnh hoặc video.
+  - Để thêm ảnh: media: { type: "image", src: "media/thu-01.jpg", alt: "Mô tả ảnh" }
+  - Để thêm video: media: { type: "video", src: "media/thu-01.mp4" }
+  - Nếu để media: null, website sẽ hiển thị khung minh họa dễ thương.
+  Hãy đặt thư mục media cạnh file index.html nếu dùng đường dẫn tương đối.
+*/
+const letters = [
+ {title:"Nàng thơ dịu dàng",caption:"Một chút dịu dàng",bg:"#f4b8c8",flap:"#df8da8",seal:"#b94d76",mark:"#8b3659",accent:"#c45d82",media1:"#f3a6bf",media2:"#b85f88",icon:"🌷",greeting:"Gửi PK Lý Thảo,",wish:"Chúc bạn luôn xinh đẹp theo cách riêng của mình, dịu dàng nhưng mạnh mẽ, bình yên mà vẫn đầy nhiệt huyết. Mong mỗi ngày đều có một điều nhỏ bé khiến bạn mỉm cười.",signoff:"Luôn rạng rỡ nhé! ♡",media: {
+  type: "image",
+  src: "media/ly_thao.jpg"
+}},
+ {title:"Bình yên trong tim",caption:"Gửi bạn bình an",bg:"#b9d9d1",flap:"#83b8aa",seal:"#4f8b7d",mark:"#32685e",accent:"#438678",media1:"#75b8a8",media2:"#d0e9dc",icon:"🕊️",greeting:"Bạn thân mến,",wish:"Mong bạn có đủ bình yên để lắng nghe chính mình, đủ can đảm để bước tiếp và đủ yêu thương để biết rằng bạn luôn xứng đáng với những điều tốt đẹp.",signoff:"Chúc bạn an yên mỗi ngày.",media:null},
+ {title:"Rực rỡ như nắng",caption:"Tỏa sáng theo cách bạn",bg:"#f8d78d",flap:"#eab85c",seal:"#bc7a28",mark:"#8b5a19",accent:"#b77925",media1:"#f7b85e",media2:"#e98273",icon:"☀️",greeting:"Gửi người luôn tỏa sáng,",wish:"Chúc nụ cười của bạn luôn rạng rỡ như nắng sớm. Dù hôm nay có thế nào, hãy nhớ rằng bên trong bạn luôn có một nguồn ánh sáng rất riêng.",signoff:"Hãy cứ tỏa sáng nhé! ✨",media:null},
+ {title:"Ước mơ nở hoa",caption:"Dành cho những ước mơ",bg:"#d8c8f0",flap:"#b8a0de",seal:"#8062b5",mark:"#60458f",accent:"#8264b2",media1:"#a38ad8",media2:"#e2c8ed",icon:"🌸",greeting:"Gửi cô gái có nhiều ước mơ,",wish:"Mong những điều bạn ấp ủ sẽ từng chút một thành hình. Chúc bạn luôn tin vào bản thân, kiên trì với lựa chọn của mình và vui với cả những bước tiến nhỏ.",signoff:"Ước mơ nào cũng đáng được nâng niu.",media:null},
+ {title:"Nụ cười nhiệm màu",caption:"Tặng bạn một nụ cười",bg:"#f5c7ad",flap:"#e8a17f",seal:"#bf6c4e",mark:"#91472e",accent:"#bd7052",media1:"#e7a080",media2:"#f4cf9f",icon:"😊",greeting:"Này cô gái hay cười,",wish:"Chúc bạn gặp thật nhiều niềm vui bất ngờ, những người chân thành và những ngày nhẹ nhàng. Mong nụ cười của bạn không chỉ làm đẹp thế giới mà còn luôn xuất phát từ một trái tim hạnh phúc.",signoff:"Cười thật tươi nha! ♡",media:null},
+ {title:"Mạnh mẽ và tự tin",caption:"Bạn làm được mà",bg:"#b8d3f0",flap:"#86b1e2",seal:"#4c7eb7",mark:"#315e94",accent:"#4f7fb6",media1:"#6f9fd4",media2:"#a9d6e7",icon:"🦋",greeting:"Gửi cô gái bản lĩnh,",wish:"Chúc bạn luôn tự tin vào giá trị của mình. Bạn không cần phải hoàn hảo để trở nên tuyệt vời; chỉ cần dũng cảm sống đúng với điều mình tin và không ngừng trưởng thành.",signoff:"Tin vào chính mình nhé!",media:null},
+ {title:"Một ngày ngọt ngào",caption:"Ngọt ngào như kẹo",bg:"#f3c4dc",flap:"#e69ac5",seal:"#bd5790",mark:"#8e3b6d",accent:"#bd5790",media1:"#d879ad",media2:"#f5b8c8",icon:"🍓",greeting:"Gửi người xứng đáng được chiều chuộng,",wish:"Chúc hôm nay của bạn ngọt ngào hơn một chiếc bánh, đáng yêu hơn một đóa hoa và đầy ắp những lời nói tử tế. Nhớ dành cho bản thân một chút thời gian nghỉ ngơi nhé.",signoff:"Thương bạn thật nhiều!",media:null},
+ {title:"Hoa hướng về bạn",caption:"Bạn là điều đặc biệt",bg:"#d6e6ad",flap:"#abc77a",seal:"#688b3b",mark:"#4f6b2b",accent:"#6d8c42",media1:"#9ebc65",media2:"#e4d99d",icon:"🌻",greeting:"Gửi bông hoa nhỏ,",wish:"Giống như hoa luôn hướng về ánh sáng, mong bạn cũng luôn tìm thấy hy vọng trong những ngày khó khăn. Chúc bạn được trân trọng, được lắng nghe và được yêu thương thật lòng.",signoff:"Mong bạn luôn nở hoa.",media:null},
+ {title:"Thanh xuân rực rỡ",caption:"Lưu giữ những khoảnh khắc đẹp",bg:"#f1b5a7",flap:"#df8b82",seal:"#ad514d",mark:"#853a39",accent:"#b45b57",media1:"#d97b77",media2:"#f2c49c",icon:"🎀",greeting:"Gửi cô gái của những ngày đẹp nhất,",wish:"Chúc bạn có thật nhiều khoảnh khắc đáng nhớ, những chuyến đi bất chợt, những cuộc trò chuyện thật lâu và những người bạn khiến thanh xuân trở nên ấm áp.",signoff:"Hãy tạo nên câu chuyện thật đẹp nhé.",media:null},
+ {title:"Yêu thương chính mình",caption:"Bạn cũng cần được nâng niu",bg:"#c5d6ee",flap:"#9bb9df",seal:"#587eb3",mark:"#3d5e91",accent:"#587eb3",media1:"#789bd0",media2:"#c6c7eb",icon:"💗",greeting:"Gửi bạn, người luôn cố gắng,",wish:"Đừng quên dành cho mình sự dịu dàng mà bạn vẫn dành cho mọi người. Bạn được phép nghỉ ngơi, được phép nói không và được phép tự hào về những điều mình đã vượt qua.",signoff:"Hãy thương mình nhiều hơn nhé.",media:null},
+ {title:"Điều kỳ diệu nhỏ",caption:"Những điều giản dị",bg:"#f5dfaa",flap:"#e7c477",seal:"#b58b37",mark:"#88651e",accent:"#a77f32",media1:"#e7bd61",media2:"#f2a6a0",icon:"⭐",greeting:"Gửi người tin vào điều kỳ diệu,",wish:"Mong bạn nhận ra phép màu trong một tách trà thơm, một tin nhắn hỏi thăm, một buổi chiều đẹp trời hay một người luôn nhớ đến bạn. Hạnh phúc đôi khi bắt đầu từ những điều rất nhỏ.",signoff:"Chúc bạn gặp nhiều phép màu.",media:null},
+ {title:"Dũng cảm bước đi",caption:"Mỗi bước đều đáng quý",bg:"#c3dfd7",flap:"#8ec5b6",seal:"#4e9382",mark:"#326e62",accent:"#4d9280",media1:"#60ad9c",media2:"#b4ded2",icon:"🌿",greeting:"Gửi cô gái đang nỗ lực,",wish:"Nếu con đường phía trước có lúc khó khăn, hãy bước từng bước nhỏ thôi. Bạn không cần đi nhanh hơn ai cả; chỉ cần tiếp tục tiến về phía điều khiến trái tim mình vui.",signoff:"Mình tin bạn sẽ làm được.",media:null},
+ {title:"Lời cảm ơn",caption:"Cảm ơn vì bạn hiện diện",bg:"#e7c8bd",flap:"#d5a295",seal:"#a9695f",mark:"#814a44",accent:"#a9695f",media1:"#ca9387",media2:"#eed3b5",icon:"💌",greeting:"Gửi người thật đặc biệt,",wish:"Cảm ơn bạn vì đã hiện diện, vì sự tử tế, vì những điều tốt đẹp bạn mang đến mà có thể chính bạn cũng không nhận ra. Mong cuộc đời sẽ dịu dàng với bạn như cách bạn dịu dàng với mọi người.",signoff:"Cảm ơn bạn vì là chính bạn.",media:null},
+ {title:"Hạnh phúc thật lâu",caption:"Lời chúc cuối cùng",bg:"#e8bfd0",flap:"#d998b5",seal:"#ad527e",mark:"#82375d",accent:"#ad527e",media1:"#d58aae",media2:"#f1c9b4",icon:"🎁",greeting:"Gửi bạn với tất cả yêu thương,",wish:"Nhân ngày đặc biệt này, chúc bạn luôn khỏe mạnh, hạnh phúc, tự do theo đuổi điều mình yêu và có bên cạnh những người trân quý bạn. Mong những ngày phía trước sẽ có nhiều lý do để bạn mỉm cười.",signoff:"Chúc mừng ngày Phụ nữ! ♡",media:null}
+];
+
+const grid = document.getElementById("envelopeGrid");
+const home = document.getElementById("home");
+const letterView = document.getElementById("letterView");
+const letterPaper = document.getElementById("letterPaper");
+
+letters.forEach((letter, index) => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "envelope-card";
+  button.setAttribute("aria-label", `Mở thư ${index + 1}: ${letter.title}`);
+  button.innerHTML = `
+    <div class="envelope" style="--flap:${letter.flap};--seal:${letter.seal};--mark:${letter.mark};background:${letter.bg}">
+      <span class="letter-mark">♡ ${String(index + 1).padStart(2, "0")}</span>
+      <span class="flap"></span>
+      <span class="seal">${letter.icon}</span>
+    </div>
+    <span class="env-name">${letter.title}</span>
+    <span class="env-caption">${letter.caption}</span>`;
+  button.addEventListener("click", () => openLetter(index));
+  grid.appendChild(button);
+});
+
+function openLetter(index) {
+  const letter = letters[index];
+  document.getElementById("letterTitle").textContent = letter.title;
+  document.getElementById("letterGreeting").textContent = letter.greeting;
+  document.getElementById("letterWish").textContent = letter.wish;
+  document.getElementById("letterSignoff").textContent = letter.signoff;
+  letterPaper.style.setProperty("--accent", letter.accent);
+  const frame = document.getElementById("mediaFrame");
+  frame.style.setProperty("--media1", letter.media1);
+  frame.style.setProperty("--media2", letter.media2);
+  frame.replaceChildren();
+
+  if (letter.media && letter.media.src) {
+    let mediaElement;
+    if (letter.media.type === "video") {
+      mediaElement = document.createElement("video");
+      mediaElement.controls = true;
+      mediaElement.playsInline = true;
+      mediaElement.src = letter.media.src;
+      if (letter.media.poster) mediaElement.poster = letter.media.poster;
+    } else {
+      mediaElement = document.createElement("img");
+      mediaElement.src = letter.media.src;
+      mediaElement.alt = letter.media.alt || "Ảnh đính kèm";
+    }
+    frame.appendChild(mediaElement);
+  } else {
+    const placeholder = document.createElement("div");
+    placeholder.className = "media-placeholder";
+    placeholder.innerHTML = `<span class="big-icon">${letter.icon}</span><p><strong>Một kỷ niệm xinh xắn sẽ ở đây</strong></p><small>Thêm ảnh hoặc video của bạn trong phần dữ liệu letters ở cuối file index.html.</small>`;
+    frame.appendChild(placeholder);
+  }
+
+  home.classList.add("hidden");
+  letterView.classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
+  document.getElementById("backButton").focus({preventScroll:true});
+}
+
+document.getElementById("backButton").addEventListener("click", () => {
+  letterView.classList.add("hidden");
+  home.classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !letterView.classList.contains("hidden")) {
+    document.getElementById("backButton").click();
+  }
+});
+</script>
+</body>
+</html>
