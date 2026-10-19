@@ -402,17 +402,17 @@
       <header class="hero">
         <div class="eyebrow"><span class="sparkle">✦</span> Gửi những điều dịu dàng nhất <span class="sparkle">✦</span>
         </div>
-        <h1>14 Lá Thư Yêu Thương</h1>
-        <p class="subtitle">Mỗi phong thư là một lời chúc nhỏ, một chút yêu thương và một điều xinh đẹp dành riêng cho
-          bạn. Hãy chọn một lá thư để mở nhé!</p>
+        <h1>Lá Thư Yêu Thương</h1>
+        <p class="subtitle">Mỗi bức thư là một lời yêu thương, một điều xinh đẹp mà các anh em của KVA3 dành riêng cho các
+          chị em. Mỗi chị em chọn một lá thư của riêng để mở nhé!</p>
       </header>
       <div class="envelope-grid" id="envelopeGrid" aria-label="Danh sách 14 lá thư"></div>
-      <p class="footer-note">Chúc bạn luôn rạng rỡ, hạnh phúc và được yêu thương mỗi ngày ♡</p>
+      <p class="footer-note">Chị em A3 chiến thắng, rạng rỡ, hạnh phúc và được Cha yêu thương mỗi ngày ♡</p>
     </section>
 
     <section id="letterView" class="letter-view hidden" aria-live="polite">
       <header class="letter-top">
-        <div class="eyebrow">Một điều muốn gửi đến bạn</div>
+        <div class="eyebrow">Con cái của Cha luôn rạng rỡ ♡</div>
         <h2 id="letterTitle"></h2>
       </header>
       <article class="letter-paper" id="letterPaper">
@@ -441,27 +441,58 @@
     */
     const letters = [
       {
-        title: "Nguyễn Lý Thảo", caption: "Một chút dịu dàng", bg: "#f4b8c8", flap: "#df8da8", seal: "#b94d76", mark: "#8b3659", accent: "#c45d82", media1: "#f3a6bf", media2: "#b85f88", icon: "🌷", greeting: "Gửi PK Lý Thảo,", wish: "Chúc PK luôn giữ được vẻ đẹp dịu dàng với một đức tin thuần khiết và hết lòng trước ngôi lời. Cầu xin Cha luôn đồng hành cùng PK trong mọi hoàn cảnh, trên mọi hiện trường, ban sức mới và tri thức để giúp PK Lý Thảo chiến thắng trên mọi hiện trường.", signoff: "Thi Thiên 139:14 Con cảm tạ Chúa vì con được dựng nên một cách đáng sợ và lạ lùng. Công việc Chúa thật quá diệu kỳ, Lòng con biết rõ lắm.", media: {
+        title: "Nguyễn Lý Thảo", caption: "Nỗ Lực", bg: "#f4b8c8", flap: "#df8da8", seal: "#b94d76", mark: "#8b3659", accent: "#c45d82", media1: "#f3a6bf", media2: "#b85f88", icon: "🌷", greeting: "Gửi PK Lý Thảo,", wish: "Chúc PK luôn giữ được vẻ đẹp dịu dàng với một đức tin thuần khiết và hết lòng trước ngôi lời. Cầu xin Cha luôn đồng hành cùng PK trong mọi hoàn cảnh, trên mọi hiện trường, ban sức mới và tri thức để giúp PK Lý Thảo chiến thắng trên mọi hiện trường.", signoff: "Thi Thiên 139:14 Con cảm tạ Chúa vì con được dựng nên một cách đáng sợ và lạ lùng. Công việc Chúa thật quá diệu kỳ, Lòng con biết rõ lắm.", media: {
           type: "image",
           src: "media/ly_thao.jpg"
         }
       },
-      { title: "Nguyễn Thị Vân Anh", caption: "Gửi bạn bình an", bg: "#b9d9d1", flap: "#83b8aa", seal: "#4f8b7d", mark: "#32685e", accent: "#438678", media1: "#75b8a8", media2: "#d0e9dc", icon: "🕊️", greeting: "Bạn thân mến,", wish: "Chúc Vân Anh luôn mạnh mẽ trong đức tin, vững vàng trước mọi gian nan, thử thách và không bao giờ từ bỏ. Cầu xin Cha mỗi ngày luôn dẫn dắt, che chở, bảo vệ và ban thật nhiều phước cho Vân Anh.", signoff: "Cô-lô-se 3:23-24 Khi làm bất cứ việc gì, hãy hết lòng mà làm, như làm cho Chúa chứ không phải làm cho người ta, vì biết rằng anh em sẽ nhận được cơ nghiệp từ Chúa làm phần thưởng. Anh em đang phục vụ Đấng Christ là Chúa.", media: null },
 
-      { title: "Nguyễn Thị Kim Huyền", caption: "Tỏa sáng theo cách bạn", bg: "#f8d78d", flap: "#eab85c", seal: "#bc7a28", mark: "#8b5a19", accent: "#b77925", media1: "#f7b85e", media2: "#e98273", icon: "☀️", greeting: "Gửi người luôn tỏa sáng,", wish: "Chúc Kim Huyền có được thật nhiều tình yêu thương trong Đấng Tạo Hóa. Bạn là một người ấm áp, luôn nói lời khích lệ cùng với hành động đầy tình yêu thương. Chúc ngôi lời tuôn chảy trong bạn và cùng biến thế gian này trở thành một nơi tốt đẹp hơn nhé.✨", media: null },
+      { title: "Nguyễn Thị Vân Anh", caption: "Vững Vàng ", bg: "#b9d9d1", flap: "#83b8aa", seal: "#4f8b7d", mark: "#32685e", accent: "#438678", media1: "#75b8a8", media2: "#d0e9dc", icon: "🕊️", greeting: "Gửi Vân Anh,", wish: "Chúc Vân Anh luôn mạnh mẽ trong đức tin, vững vàng trước mọi gian nan, thử thách và không bao giờ từ bỏ. Cầu xin Cha mỗi ngày luôn dẫn dắt, che chở, bảo vệ và ban thật nhiều phước cho Vân Anh.", signoff: "Cô-lô-se 3:23-24 Khi làm bất cứ việc gì, hãy hết lòng mà làm, như làm cho Chúa chứ không phải làm cho người ta, vì biết rằng anh em sẽ nhận được cơ nghiệp từ Chúa làm phần thưởng. Anh em đang phục vụ Đấng Christ là Chúa.", media: {
+          type: "image",
+          src: "media/van_anh.jpg"
+        } },
 
-      { title: "Nguyễn Thị Thanh Thuỷ", caption: "Dành cho những ước mơ", bg: "#d8c8f0", flap: "#b8a0de", seal: "#8062b5", mark: "#60458f", accent: "#8264b2", media1: "#a38ad8", media2: "#e2c8ed", icon: "🌸", greeting: "Gửi cô gái có nhiều ước mơ,", wish: "Con đường tín ngưỡng là đường chật cửa hẹp, là sự gian nản và vất vả. Chúc Thủy không nản lòng trên con đường này, hãy luôn nhớ chăm sóc linh hồn của bản thân. Cầu xin Cha ban thêm sức mới trong lúc Thủy còn yếu đuối, ban trí tuệ và sự khôn sáng dẫn dắt Thủy trên con đường tín ngưỡng này.", signoff: "Ước mơ nào cũng đáng được nâng niu.", media: null },
+      { title: "Nguyễn Thị Kim Huyền", caption: "Đức Tin", bg: "#f8d78d", flap: "#eab85c", seal: "#bc7a28", mark: "#8b5a19", accent: "#b77925", media1: "#f7b85e", media2: "#e98273", icon: "☀️", greeting: "Gửi Kim Huyền,", wish: "Chúc Kim Huyền có được thật nhiều tình yêu thương trong Đấng Tạo Hóa. Bạn là một người ấm áp, luôn nói lời khích lệ cùng với hành động đầy tình yêu thương. Chúc ngôi lời tuôn chảy trong bạn và cùng biến thế gian này trở thành một nơi tốt đẹp hơn nhé.✨", media: null },
 
-      { title: "Nụ cười nhiệm màu", caption: "Tặng bạn một nụ cười", bg: "#f5c7ad", flap: "#e8a17f", seal: "#bf6c4e", mark: "#91472e", accent: "#bd7052", media1: "#e7a080", media2: "#f4cf9f", icon: "😊", greeting: "Này cô gái hay cười,", wish: "Chúc bạn gặp thật nhiều niềm vui bất ngờ, những người chân thành và những ngày nhẹ nhàng. Mong nụ cười của bạn không chỉ làm đẹp thế giới mà còn luôn xuất phát từ một trái tim hạnh phúc.", signoff: "Cười thật tươi nha! ♡", media: null },
-      { title: "Mạnh mẽ và tự tin", caption: "Bạn làm được mà", bg: "#b8d3f0", flap: "#86b1e2", seal: "#4c7eb7", mark: "#315e94", accent: "#4f7fb6", media1: "#6f9fd4", media2: "#a9d6e7", icon: "🦋", greeting: "Gửi cô gái bản lĩnh,", wish: "Chúc bạn luôn tự tin vào giá trị của mình. Bạn không cần phải hoàn hảo để trở nên tuyệt vời; chỉ cần dũng cảm sống đúng với điều mình tin và không ngừng trưởng thành.", signoff: "Tin vào chính mình nhé!", media: null },
-      { title: "Một ngày ngọt ngào", caption: "Ngọt ngào như kẹo", bg: "#f3c4dc", flap: "#e69ac5", seal: "#bd5790", mark: "#8e3b6d", accent: "#bd5790", media1: "#d879ad", media2: "#f5b8c8", icon: "🍓", greeting: "Gửi người xứng đáng được chiều chuộng,", wish: "Chúc hôm nay của bạn ngọt ngào hơn một chiếc bánh, đáng yêu hơn một đóa hoa và đầy ắp những lời nói tử tế. Nhớ dành cho bản thân một chút thời gian nghỉ ngơi nhé.", signoff: "Thương bạn thật nhiều!", media: null },
-      { title: "Hoa hướng về bạn", caption: "Bạn là điều đặc biệt", bg: "#d6e6ad", flap: "#abc77a", seal: "#688b3b", mark: "#4f6b2b", accent: "#6d8c42", media1: "#9ebc65", media2: "#e4d99d", icon: "🌻", greeting: "Gửi bông hoa nhỏ,", wish: "Giống như hoa luôn hướng về ánh sáng, mong bạn cũng luôn tìm thấy hy vọng trong những ngày khó khăn. Chúc bạn được trân trọng, được lắng nghe và được yêu thương thật lòng.", signoff: "Mong bạn luôn nở hoa.", media: null },
-      { title: "Thanh xuân rực rỡ", caption: "Lưu giữ những khoảnh khắc đẹp", bg: "#f1b5a7", flap: "#df8b82", seal: "#ad514d", mark: "#853a39", accent: "#b45b57", media1: "#d97b77", media2: "#f2c49c", icon: "🎀", greeting: "Gửi cô gái của những ngày đẹp nhất,", wish: "Chúc bạn có thật nhiều khoảnh khắc đáng nhớ, những chuyến đi bất chợt, những cuộc trò chuyện thật lâu và những người bạn khiến thanh xuân trở nên ấm áp.", signoff: "Hãy tạo nên câu chuyện thật đẹp nhé.", media: null },
-      { title: "Yêu thương chính mình", caption: "Bạn cũng cần được nâng niu", bg: "#c5d6ee", flap: "#9bb9df", seal: "#587eb3", mark: "#3d5e91", accent: "#587eb3", media1: "#789bd0", media2: "#c6c7eb", icon: "💗", greeting: "Gửi bạn, người luôn cố gắng,", wish: "Đừng quên dành cho mình sự dịu dàng mà bạn vẫn dành cho mọi người. Bạn được phép nghỉ ngơi, được phép nói không và được phép tự hào về những điều mình đã vượt qua.", signoff: "Hãy thương mình nhiều hơn nhé.", media: null },
-      { title: "Điều kỳ diệu nhỏ", caption: "Những điều giản dị", bg: "#f5dfaa", flap: "#e7c477", seal: "#b58b37", mark: "#88651e", accent: "#a77f32", media1: "#e7bd61", media2: "#f2a6a0", icon: "⭐", greeting: "Gửi người tin vào điều kỳ diệu,", wish: "Mong bạn nhận ra phép màu trong một tách trà thơm, một tin nhắn hỏi thăm, một buổi chiều đẹp trời hay một người luôn nhớ đến bạn. Hạnh phúc đôi khi bắt đầu từ những điều rất nhỏ.", signoff: "Chúc bạn gặp nhiều phép màu.", media: null },
-      { title: "Dũng cảm bước đi", caption: "Mỗi bước đều đáng quý", bg: "#c3dfd7", flap: "#8ec5b6", seal: "#4e9382", mark: "#326e62", accent: "#4d9280", media1: "#60ad9c", media2: "#b4ded2", icon: "🌿", greeting: "Gửi cô gái đang nỗ lực,", wish: "Nếu con đường phía trước có lúc khó khăn, hãy bước từng bước nhỏ thôi. Bạn không cần đi nhanh hơn ai cả; chỉ cần tiếp tục tiến về phía điều khiến trái tim mình vui.", signoff: "Mình tin bạn sẽ làm được.", media: null },
-      { title: "Lời cảm ơn", caption: "Cảm ơn vì bạn hiện diện", bg: "#e7c8bd", flap: "#d5a295", seal: "#a9695f", mark: "#814a44", accent: "#a9695f", media1: "#ca9387", media2: "#eed3b5", icon: "💌", greeting: "Gửi người thật đặc biệt,", wish: "Cảm ơn bạn vì đã hiện diện, vì sự tử tế, vì những điều tốt đẹp bạn mang đến mà có thể chính bạn cũng không nhận ra. Mong cuộc đời sẽ dịu dàng với bạn như cách bạn dịu dàng với mọi người.", signoff: "Cảm ơn bạn vì là chính bạn.", media: null },
-      { title: "Hạnh phúc thật lâu", caption: "Lời chúc cuối cùng", bg: "#e8bfd0", flap: "#d998b5", seal: "#ad527e", mark: "#82375d", accent: "#ad527e", media1: "#d58aae", media2: "#f1c9b4", icon: "🎁", greeting: "Gửi bạn với tất cả yêu thương,", wish: "Nhân ngày đặc biệt này, chúc bạn luôn khỏe mạnh, hạnh phúc, tự do theo đuổi điều mình yêu và có bên cạnh những người trân quý bạn. Mong những ngày phía trước sẽ có nhiều lý do để bạn mỉm cười.", signoff: "Chúc mừng ngày Phụ nữ! ♡", media: null }
+      { title: "Nguyễn Thị Thanh Thuỷ", caption: "Hiệp Lực", bg: "#d8c8f0", flap: "#b8a0de", seal: "#8062b5", mark: "#60458f", accent: "#8264b2", media1: "#a38ad8", media2: "#e2c8ed", icon: "🌸", greeting: "Gửi Thanh Thủy,", wish: "Con đường tín ngưỡng là đường chật cửa hẹp, là sự gian nản và vất vả. Chúc Thủy không nản lòng trên con đường này, hãy luôn nhớ chăm sóc linh hồn của bản thân. Cầu xin Cha ban thêm sức mới trong lúc Thủy còn yếu đuối, ban trí tuệ và sự khôn sáng dẫn dắt Thủy trên con đường tín ngưỡng này.", signoff: "Ước mơ nào cũng đáng được nâng niu.", media: {
+          type: "image",
+          src: "media/thanh_thuy.jpg"
+        } },
+
+      { title: "Nguyễn Thị Bích Diệp", caption: "Công Chính", bg: "#f5c7ad", flap: "#e8a17f", seal: "#bf6c4e", mark: "#91472e", accent: "#bd7052", media1: "#e7a080", media2: "#f4cf9f", icon: "😊", greeting: "Gửi TK Diệp,", wish: "Chúc TK luôn luôn nhận được nhiều ân điển từ Cha, luôn mang tấm lòng đẹp đẽ và trong sáng nhất ở trong vòng tay của Cha. Mong Cha luôn gửi gắm thiên sứ ở trên TK để TK luôn được tiếp sức và chiến thắng được mọi điều.", signoff: "Phi-líp 4:7 Sự bình an của Đức Chúa Trời, vượt trên mọi sự hiểu biết, sẽ gìn giữ lòng và trí anh em trong Đấng Christ Jêsus.", media: null },
+
+      { title: "Đặng Thuỳ Dương", caption: "Chiến Thắng", bg: "#b8d3f0", flap: "#86b1e2", seal: "#4c7eb7", mark: "#315e94", accent: "#4f7fb6", media1: "#6f9fd4", media2: "#a9d6e7", icon: "🦋", greeting: "Gửi Thùy Dương,", wish: "Chúc anh em Đặng Dương luôn mang tấm lòng khiêm tốn trước mọi điều và được Cha luôn yêu thương, bảo vệ ở trong vòng tay. Xin Cha đồng hành ở trên anh em Đặng Dương, giúp đỡ anh em chiến thắng mọi hoàn cảnh và luôn mang tinh thần nhiệt huyết trong công việc của Cha.", signoff: "Phi-líp 2:3 Đừng làm điều gì vì lòng ích kỷ, hoặc vì hư vinh, nhưng hãy khiêm nhường, xem người khác đáng tôn trọng hơn mình.", media: null },
+
+      { title: "Lê Thị Ngọc Mai", caption: "Nỗ Lực", bg: "#f3c4dc", flap: "#e69ac5", seal: "#bd5790", mark: "#8e3b6d", accent: "#bd5790", media1: "#d879ad", media2: "#f5b8c8", icon: "🍓", greeting: "Gửi Ngọc Mai,", wish: "Chúc anh em Ngọc Mai luôn mang tinh thần chiến thắng với mọi điều và luôn kết nối, mang tình yêu trong sáng ở trước Ngôi Lời. Xin Cha bảo vệ tấm lòng của Ngọc Mai, ban cho anh em đức tin bất biến và tiếp tục sứ mệnh của bản thân mỗi ngày.", signoff: "I Giăng 5:4 Vì ai sinh bởi Đức Chúa Trời thì chiến thắng thế gian; điều làm cho chúng ta chiến thắng thế gian chính là đức tin của chúng ta.", media: null },
+
+      { title: "Hoàng Thị Thuỳ Dương", caption: "Bất Biến", bg: "#d6e6ad", flap: "#abc77a", seal: "#688b3b", mark: "#4f6b2b", accent: "#6d8c42", media1: "#9ebc65", media2: "#e4d99d", icon: "🌻", greeting: "Gửi Thùy Dương,", wish: "Chúc anh em Thuỳ Dương mạnh khoẻ ở trong cả tâm linh và xác thịt, luôn mang tinh thần bùng nổ ở trong việc đóng ấn và truyền đạo. Xin Cha luôn đồng hành ở trên anh em, bảo vệ tấm lòng anh em khỏi những cám dỗ của ma quỷ và chiến thắng từng điều.", signoff: " Ca Thương 3:22 Nhờ lòng nhân từ của Đức Giê-hô-va mà chúng ta không bị tiêu diệt, Lòng thương xót của Ngài không bao giờ dứt.", media: null },
+
+      { title: "Nguyễn Phi Nhung", caption: "Khiêm Nhu", bg: "#f1b5a7", flap: "#df8b82", seal: "#ad514d", mark: "#853a39", accent: "#b45b57", media1: "#d97b77", media2: "#f2c49c", icon: "🎀", greeting: "Gửi Phi Nhung,", wish: "Chúc anh em Phi Nhung luôn mang đức tin bất biến dù ở trong bất cứ hoàn cảnh khó khăn nào, mang nụ cười ở trên mặt và tấm lòng khiêm tốn để chiến thắng những cám dỗ từ ma quỷ. Mong Cha gửi gắm thật nhiều thiên sứ đồng hành trên Phi Nhung, bảo vệ và giúp đỡ bạn đến con đường của ánh sáng.", signoff: "Thi Thiên 68:3 Nhưng người công chính sẽ vui vẻ, Hớn hở trước mặt Đức Chúa Trời; Nguyện họ hân hoan, vui sướng.", media: null },
+
+      { title: "Vũ Trần Huyền Chi", caption: "Yêu Thương", bg: "#c5d6ee", flap: "#9bb9df", seal: "#587eb3", mark: "#3d5e91", accent: "#587eb3", media1: "#789bd0", media2: "#c6c7eb", icon: "💗", greeting: "Gửi PK Chi,", wish: "Chúc Pk luôn xinh đẹp cả trong tâm linh cả trong xác thịt chúc Pk thấu hiểu được ý muốn,nhận điều nhiều ân tứ của Cha, chúc Pk hoàn thành sứ mệnh tín ngưỡng được Cha giao phó, cùng TPK phát triển các thánh đồ thành những người con trung hiếu của Cha.", signoff: "I Cô rinh tô 14:12 Anh em cũng vậy, vì khao khát những ân tứ thuộc linh, anh em hãy tìm kiếm cho được dư dật các ân tứ đó để xây dựng Hội Thánh", media: {
+          type: "image",
+          src: "media/huyen_chi.jpg"
+        } },
+
+      { title: "Nguyễn Thị Hoàng Minh", caption: "Bình An", bg: "#f5dfaa", flap: "#e7c477", seal: "#b58b37", mark: "#88651e", accent: "#a77f32", media1: "#e7bd61", media2: "#f2a6a0", icon: "⭐", greeting: "Gửi Hoàng Minh,", wish:"Chúc Minh luôn xinh đẹp và tỉnh thức hơn trong tâm linh, luôn tìm kiếm Cha trong mọi điều kiện hoàn cảnh, xin Cha ban Thánh Linh tiếp sức mới và tấm lòng nhiệt huyết làm công việc của Cha, chúc Minh luôn gìn giữ tấm lòng kiên trì.", signoff: "Ma thi ơ 7:7-8 Hãy xin, sẽ được; hãy tìm, sẽ gặp; hãy go, cửa sẽ mở cho các con. Vì hễ ai xin thì được; ai tìm thì gặp; và ai gõ thì cửa sẽ được mở.", media: {
+          type: "image",
+          src: "media/hoang_minh.jpg"
+        } },
+
+      { title: "Nguyễn Thị Thuỷ Trinh", caption: "Tiết Độ", bg: "#c3dfd7", flap: "#8ec5b6", seal: "#4e9382", mark: "#326e62", accent: "#4d9280", media1: "#60ad9c", media2: "#b4ded2", icon: "🌿", greeting: "Gửi Thủy Trinh,", wish: "Chúc Trinh luôn tỉnh thức để làm công việc của Cha và công việc trong xác thịt. Trưởng thành hơn trong trong vương quốc của Cha cùng nhiệt huyết ghi nhớ ước vọng của bản thân và nỗ lực để xin Cha thành đạt ước vọng.", signoff: "Phi líp 1:9 Điều tôi cầu xin, ấy là tình yêu thương của anh em ngày càng gia tăng, cùng với sự hiểu biết và mọi nhận thức sâu sắc.", media: {
+          type: "image",
+          src: "media/thuy_trinh.jpg"
+        } },
+
+      { title: "Lương Nguyễn Mai Khanh", caption: "Trung Tín", bg: "#e7c8bd", flap: "#d5a295", seal: "#a9695f", mark: "#814a44", accent: "#a9695f", media1: "#ca9387", media2: "#eed3b5", icon: "💌", greeting: "Gửi Mai Khanh,", wish:"Chúc Mai Khanh luôn nhiệt huyết, chăm chỉ, chú tâm làm công việc của Đức Chúa Trời, và trở thành người giữ lời hứa trong từng việc nhỏ. Giữ vững đức tin cho đến cuối cùng.", signoff: "Ê sai 41:10 Đừng sợ vì Ta ở với con, Chớ kinh khiếp vì Ta là Đức Chúa Trời của con! Ta sẽ làm cho con mạnh mẽ; phải, Ta sẽ giúp đỡ con, Dùng tay phải công chính của Ta mà nắm giữ con.", media: {
+          type: "image",
+          src: "media/mai_khanh.jpg"
+        } },
+
+      { title: "Nguyễn Tú Mai", caption: "Hiền Lành", bg: "#e8bfd0", flap: "#d998b5", seal: "#ad527e", mark: "#82375d", accent: "#ad527e", media1: "#d58aae", media2: "#f1c9b4", icon: "🎁", greeting: "Gửi Tú Mai,",wish:"Chúc chị Tú Mai luôn vui vẻ và hạnh phúc, nỗ lực sắp xếp hoàn thành công việc trong xác thịt. Ngày càng trưởng thành hơn trong vương quốc của Cha.", signoff: "Gia cơ 1: 2-4 Thưa anh em của tôi, hãy xem sự thử thách trăm chiều xảy đến cho anh em như là điều vui mừng trọn vẹn, vì biết rằng sự thử thách đức tin anh em sinh ra kiên nhẫn. Nhưng sự kiên nhẫn phát huy hết hiệu lực của nó, để chính anh em được trưởng thành, hoàn hảo, không thiếu xót điều gì.", media: {
+          type: "image",
+          src: "media/tu_mai.jpg"
+        } }
     ];
 
     const grid = document.getElementById("envelopeGrid");
